@@ -8,7 +8,6 @@ const infoButtonEl = document.getElementById('more-info-click')
 // const instructionsEl = document.getElementById('instructions')
 
 // stroke rate variables
-let count = 0
 let startCount = false
 let startTime = 0
 let endTime = 0
@@ -16,7 +15,6 @@ let strokesBetween = 4
 
 rateButton.addEventListener('click', handleRateButton)
 resetButton.addEventListener('click', handleResetButton)
-// infoButtonEl.addEventListener('click', handleInfoToggle)
 
 function handleRateButton() {
     startCount = !startCount
@@ -33,20 +31,14 @@ function handleRateButton() {
 }
 
 function handleResetButton() {
-    count = 0
+    startCount = false
+    startTime = 0
+    endTime = 0
     rateDisplay.innerHTML = `00.0`
 }
 
-function handleInfoToggle() {
-    console.log('clicked')
-    if (instructionsEl.classList.contains('show-instructions')) {
-        instructionsEl.classList.remove('show-instructions')
-    } else {
-        instructionsEl.classList.add('show-instructions')
-    }
-}
 
-// METRONOME 
+// ------------- METRONOME CODE ----------------//
 const quantityEl = document.getElementById('quantity')
 const startStopEl = document.getElementById('start-metronome')
 const audio = new Audio('assets/metronome.m4a')
